@@ -4,38 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sobre Nosotros - Chinese Mall Azua</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-/* PALETA ACTUALIZADA: Rojo #D52B1E, Azul #0046AD, Blanco #FFFFFF */
+/* PALETA: Rojo #D52B1E, Azul #0046AD, Blanco #FFFFFF */
 
     body {
         margin: 0;
         font-family: 'Poppins', Arial, sans-serif;
-        color: #333333; /* Texto principal en Gris oscuro */
-        background-color: #FFFFFF; /* Fondo principal en Blanco */
+        color: #333333; 
+        background-color: #f8f8f8; /* Fondo suave para destacar el contenido */
     }
 
-    /* --- ESTILOS DEL MENÚ --- */
+    /* --- ESTILOS DEL MENÚ (REPARADO) --- */
 
     .menu {
         background-color: #D52B1E; /* Fondo del menú en Rojo Principal */
-        color: white;
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 15px 5%; 
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 15px 5%; /* Más compacto */
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     }
 
     .logo {
-        font-size: 24px;
-        font-weight: 700; 
-        color: #0046AD; /* Logo en Azul Secundario */
-        letter-spacing: 1px;
-        background-color: white; /* Fondo blanco para que el azul del logo resalte */
-        padding: 5px 10px;
-        border-radius: 5px;
+        font-size: 26px; /* Letra un poco más grande */
+        font-weight: 800; /* Extra-Bold */
+        color: #FFFFFF; /* Logo principal en Blanco */
+        letter-spacing: 0.5px;
+        /* Quitamos el fondo blanco y el padding extra que lo hacía ver feo */
+        padding: 0; 
+        background-color: transparent; 
+        /* Usaremos un acento sutil para el azul */
+        border-bottom: 3px solid #0046AD; 
+        line-height: 1.2;
     }
 
     .nav-links {
@@ -43,25 +45,27 @@
         margin: 0;
         padding: 0;
         display: flex;
-        gap: 20px;
+        gap: 15px; /* Espacio más ajustado */
     }
 
     .nav-links li a {
         text-decoration: none;
         color: white;
         font-weight: 600;
-        padding: 10px 15px;
+        padding: 8px 12px; /* Más pequeño y limpio */
         transition: 0.3s ease;
-        border-radius: 5px;
+        border-radius: 4px;
+        position: relative; /* Para el efecto de línea */
     }
 
-    /* El Azul Marino (#0046AD) se usa para el efecto hover */
+    /* EFECTO HOVER MODERNO CON AZUL */
     .nav-links li a:hover {
-        background-color: #0046AD; /* Fondo azul al pasar el mouse */
-        color: white; /* Texto blanco en el hover */
+        color: #0046AD; /* Texto en Azul al pasar el mouse */
+        background-color: #FFFFFF; /* Fondo blanco sutil */
+        box-shadow: 0 0 10px rgba(0, 70, 173, 0.3); /* Sombra Azul */
     }
 
-    /* --- ESTILOS DE LA SECCIÓN 'SOBRE NOSOTROS' --- */
+    /* --- ESTILOS DE LA SECCIÓN 'SOBRE NOSOTROS' (Sin cambios en contenido) --- */
 
     .about-section {
         padding: 60px 5%;
@@ -72,7 +76,7 @@
 
     .about-section h1 {
         font-size: 3em;
-        color: #D52B1E; /* Título principal en Rojo */
+        color: #D52B1E; 
         margin-bottom: 10px;
         font-weight: 700;
         border-bottom: 4px solid #0046AD; /* Borde inferior en Azul */
@@ -101,14 +105,14 @@
         background-color: #FFFFFF;
         border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
-        border: 1px solid #0046AD30; /* Borde sutil en Azul claro */
+        border: 1px solid #0046AD30; 
     }
 
     .mission-vision h2, .history-values h2 {
-        color: #0046AD; /* Subtítulos en Azul */
+        color: #0046AD; 
         font-size: 1.8em;
         margin-top: 0;
-        border-left: 5px solid #D52B1E; /* Acento con línea Roja */
+        border-left: 5px solid #D52B1E; 
         padding-left: 10px;
         font-weight: 600;
     }
@@ -116,7 +120,7 @@
     .image-placeholder {
         width: 100%;
         height: 300px;
-        background-color: #D52B1E; /* Placeholder en Rojo */
+        background-color: #D52B1E; 
         border-radius: 10px;
         margin-bottom: 30px;
         display: flex;
@@ -128,7 +132,7 @@
     }
 
     .highlight {
-        color: #D52B1E; /* Para resaltar palabras clave en el texto en Rojo */
+        color: #D52B1E; 
         font-weight: 600;
     }
 </style>
@@ -152,7 +156,6 @@
 <main>
     <section class="about-section">
         <h1>Conoce Nuestra Historia y Compromiso con Azua</h1>
-
         <div class="image-placeholder">
             [Espacio para una foto de la fachada o el interior de la Plaza Chinese Mall Azua]
         </div>
@@ -201,6 +204,7 @@
 
 </body>
 </html>
+
 
 
 
