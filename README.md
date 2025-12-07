@@ -1,2 +1,74 @@
-# ChinesseMall-project
-Pagina web para la empresa chinesseMall Azua
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChineseMall Azua</title>
+
+    <header>
+  <nav class="menu">
+    <div class="logo">CHINESE MALL AZUA</div>
+    <ul class="nav-links">
+      <li><a href="index.html">Inicio</a></li>
+<li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+<li><a href="Productos.html">Productos</a></li>
+<li><a href="Atencion-clientes.html">Atención al cliente</a></li>
+<li><a href="Ofertas-descuentos.html">Ofertas y descuentos</a></li>
+<li><a href="Novedades.html">Novedades</a></li>
+    </ul>
+  </nav>
+</header>
+
+<style>
+
+    body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  
+  color:  #0046ad;
+ 
+}
+
+
+.menu {
+  background-color: #d70000; /* Rojo principal */
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px 30px;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+  padding: 8px 12px;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover {
+  background-color: #0046ad; /* Azul del letrero */
+  border-radius: 10px;
+}
+
+
+</style>
