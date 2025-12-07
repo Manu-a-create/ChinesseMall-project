@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Chinesse Mall</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: white;
+}
+
+header {
+    background: linear-gradient(90deg, #0033cc, #e60000);
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+header .logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+header img {
+    height: 50px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 28px;
+    font-weight: 700;
+}
+
+nav a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: #f2f2f2;
+}
+
+.hero h2 {
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #0033cc;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #333;
+    max-width: 600px;
+    margin: auto;
+}
+
+.btn-primary {
+    margin-top: 20px;
+    padding: 12px 28px;
+    background: #e60000;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.btn-primary:hover {
+    background: #b30000;
+}
+
+/* --- Sección de Información --- */
+.info-section {
+    padding: 60px 40px;
+    text-align: center;
+    background: #ffffff;
+}
+
+.info-section h2 {
+    color: #0033cc;
+    font-size: 32px;
+}
+
+.info-section p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 17px;
+    color: #444;
+}
+
+/* --- Muestra de Productos --- */
+.productos {
+    background: #f8f8f8;
+    padding: 60px 40px;
+    text-align: center;
+}
+
+.productos h2 {
+    color: #e60000;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.producto-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    width: 220px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.card img {
+    width: 100%;
+    height: 140px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.card h3 {
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.card p {
+    color: #555;
+}
+
+/* --- Descuentos --- */
+.descuentos {
+    padding: 60px 40px;
+    background: linear-gradient(90deg, #0033cc, #e60000);
+    color: white;
+    text-align: center;
+}
+
+.descuentos h2 {
+    font-size: 30px;
+}
+
+.descuentos p {
+    font-size: 18px;
+    margin-top: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<header>
+    <div class="logo-container">
+        <img src="C:\Users\User Name\Desktop\dibujo\Sin título.png" alt="Logo Chinesse Mall">
+        <h1>Chinesse Mall</h1>
+    </div>
+    <nav>
+        <a href="#">Inicio</a>
+        <a href="#">Productos</a>
+        <a href="#">Ofertas</a>
+        <a href="#">Contacto</a>
+    </nav>
+</header>
+
+<section class="hero">
+    <h2>Bienvenido a Chinesse Mall</h2>
+    <p>Tu tienda de productos variados, desde tecnología hasta decoración, todo en un solo lugar con los mejores precios.</p>
+    <button class="btn-primary">Explorar productos</button>
+</section>
+
+<!-- Sección información del local -->
+<section class="info-section">
+    <h2>Sobre nuestro local</h2>
+    <p>
+        En Chinesse Mall trabajamos para ofrecerte los mejores productos importados al mejor precio. 
+        Contamos con artículos de tecnología, hogar, decoración, accesorios y mucho más. 
+        Nuestro objetivo es brindarte calidad, variedad y una excelente experiencia de compra.
+    </p>
+</section>
+
+<!-- Muestra de productos -->
+<section class="productos">
+    <h2>Lo que ofrecemos</h2>
+    <div class="producto-grid">
+        <div class="card">
+            <img src="C:\Users\User Name\Desktop\dibujo\images (5).jpg/200x140" alt="">
+            <h3>Accesorios Tech</h3>
+            <p>Auriculares, cargadores, cables y gadgets modernos.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x140" alt="">
+            <h3>Decoración</h3>
+            <p>Luces LED, figuras, cuadros y más.</p>
+        </div>
+        <div class="card">
+            <img src="https://via.placeholder.com/200x140" alt="">
+            <h3>Hogar</h3>
+            <p>Organizadores, utensilios y productos prácticos.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Sección de descuentos -->
+<section class="descuentos">
+    <h2>Descuentos especiales</h2>
+    <p>Hasta un 50% de descuento en productos seleccionados cada semana. ¡Aprovecha nuestras ofertas limitadas!</p>  
+    <p>&copy; 2025 chinesse mall | Todos los derechos reservados</p>
+    <div>
+      <a href="#">Facebook</a>
+      <a href="#">Instagram</a> |
+      <a href="#"> "https://www.youtube.com/"</a>
+      
+      
+    </div>
+  </section>
+
+</body>
+</html>
+
+
+
