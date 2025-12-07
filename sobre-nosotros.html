@@ -3,73 +3,197 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sobre-nosotros</title>
-
-    <header>
-  <nav class="menu">
-    <div class="logo">CHINESE MALL AZUA</div>
-    <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-<li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-<li><a href="Productos.html">Productos</a></li>
-<li><a href="Atencion-clientes.html">Atención al cliente</a></li>
-<li><a href="Ofertas-descuentos.html">Ofertas y descuentos</a></li>
-<li><a href="Novedades.html">Novedades</a></li>
-    </ul>
-  </nav>
-</header>
+    <title>Sobre Nosotros - Chinese Mall Azua</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
 <style>
 
+
     body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+        margin: 0;
+        font-family: 'Poppins', Arial, sans-serif;
+        color: #333333; 
+        background-color: #f8f8f8; 
+    }
 
-.logo {
-  
-  color:  #0046ad;
- 
-}
+    
 
+    .menu {
+        background-color: #D52B1E; 
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 5%; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
 
-.menu {
-  background-color: #d70000; 
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px 30px;
-}
+    .logo {
+        font-size: 24px;
+        font-weight: 700; 
+        color: #FFC72C; 
+        letter-spacing: 1px;
+    }
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #ffffff;
-  letter-spacing: 1px;
-}
+    .nav-links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
 
-.nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 25px;
-}
+    .nav-links li a {
+        text-decoration: none;
+        color: white;
+        font-weight: 600;
+        padding: 10px 15px;
+        transition: 0.3s ease;
+        border-radius: 5px;
+    }
 
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 8px 12px;
-  transition: 0.3s;
-}
+    .nav-links li a:hover {
+        background-color: #A92017; 
+        color: #FFC72C; 
+    }
 
-.nav-links li a:hover {
-  background-color: #0046ad; 
-  border-radius: 10px;
-}
+    
 
+    .about-section {
+        padding: 60px 5%;
+        text-align: center;
+        max-width: 1200px;
+        margin: 0 auto;
+    }
 
+    .about-section h1 {
+        font-size: 3em;
+        color: #D52B1E; 
+        margin-bottom: 10px;
+        font-weight: 700;
+        border-bottom: 4px solid #FFC72C; 
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+
+    .about-content {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+        text-align: left;
+        margin-top: 40px;
+    }
+    
+    .full-width-text {
+        width: 100%;
+        padding: 20px 0;
+        text-align: justify;
+    }
+
+    .mission-vision, .history-values {
+        flex: 1;
+        min-width: 300px;
+        padding: 30px;
+        background-color: #FFFFFF;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        border-top: 5px solid #D52B1E; 
+    }
+
+    .mission-vision h2, .history-values h2 {
+        color: #D52B1E; 
+        font-size: 1.8em;
+        margin-top: 0;
+        border-left: 5px solid #FFC72C; 
+        padding-left: 10px;
+        font-weight: 600;
+    }
+
+    .image-placeholder {
+        width: 100%;
+        height: 300px;
+        background-color: #FFC72C; 
+        border-radius: 10px;
+        margin-bottom: 30px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    .highlight {
+        color: #D52B1E; 
+        font-weight: 600;
+    }
 </style>
+</head>
+<body>
 
+<header>
+    <nav class="menu">
+        <div class="logo">CHINESE MALL AZUA</div>
+        <ul class="nav-links">
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+            <li><a href="Productos.html">Productos</a></li>
+            <li><a href="Atencion-clientes.html">Atención al cliente</a></li>
+            <li><a href="Ofertas-descuentos.html">Ofertas y descuentos</a></li>
+            <li><a href="Novedades.html">Novedades</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <section class="about-section">
+        <h1>Conoce Nuestra Historia y Compromiso con Azua</h1>
+
+        <div class="image-placeholder">
+            [Espacio para una foto de la fachada o el interior de la Plaza Chinese Mall Azua]
+        </div>
+        
+        <div class="full-width-text">
+            <h2>El Origen de Chinese Mall Azua</h2>
+            <p>
+                Nacimos de la visión de crear un espacio comercial único en el Sur de la República Dominicana. <span class="highlight">Chinese Mall Azua</span> no es solo una tienda; es un <span class="highlight">centro de soluciones</span> que trae la diversidad y la innovación de los mercados globales directamente a Azua de Compostela. Desde el primer día, nuestro objetivo ha sido elevar el estándar de la oferta minorista en la región, proporcionando a las familias azuanas acceso a una increíble gama de artículos sin tener que viajar a grandes ciudades.
+            </p>
+            <p>
+                Hemos crecido de la mano con la comunidad. Cada estante y cada pasillo ha sido diseñado pensando en la comodidad y la experiencia de nuestros visitantes. Somos un pilar del comercio local, comprometidos con el desarrollo económico y la creación de empleos en la provincia, impulsando el bienestar de todos.
+            </p>
+        </div>
+
+        <div class="about-content">
+            <div class="mission-vision">
+                <h2>Nuestra Misión</h2>
+                <p>
+                    Ser la principal <span class="highlight">opción de compra</span> en Azua y la región Sur. Nuestra misión se enfoca en ofrecer una <span class="highlight">amplia y sorprendente variedad</span> de productos, desde artículos para el hogar hasta electrónica y moda, todos respaldados por nuestra promesa de calidad y a los <span class="highlight">precios más competitivos</span> del mercado. Buscamos facilitar la vida de nuestros clientes, convirtiendo sus necesidades en soluciones prácticas y accesibles en un solo y conveniente lugar.
+                </p>
+
+                <h2>Nuestra Visión</h2>
+                <p>
+                    Expandir nuestro impacto como un referente de <span class="highlight">excelencia, innovación y servicio</span> en toda la República Dominicana. Aspiramos a ser reconocidos no solo por la diversidad de nuestro inventario, sino también por nuestra contribución positiva a la economía local y nuestro compromiso inquebrantable con la satisfacción del cliente. Queremos que la marca Chinese Mall Azua sea sinónimo de <span class="highlight">confianza y prosperidad</span>.
+                </p>
+            </div>
+
+            <div class="history-values">
+                <h2>Compromiso y Valores Fundamentales</h2>
+                <p>
+                    Nuestros valores son el corazón de cada decisión que tomamos y cada servicio que ofrecemos. Creemos firmemente que la solidez de una empresa se construye sobre principios innegociables.
+                </p>
+                <ul>
+                    <li><span class="highlight">Integridad y Transparencia:</span> Actuamos con la máxima honestidad en la calidad de nuestros productos y en nuestros precios.</li>
+                    <li><span class="highlight">Servicio al Cliente Excepcional:</span> Nuestro personal está capacitado para ofrecer una atención cálida, rápida y eficiente, asegurando que cada visita sea placentera.</li>
+                    <li><span class="highlight">Innovación Constante:</span> Mantenemos nuestro inventario fresco y relevante, siempre buscando las últimas tendencias y los productos más demandados a nivel global.</li>
+                    <li><span class="highlight">Fomento Comunitario:</span> Nos integramos activamente en la vida de Azua, apoyando iniciativas locales y siendo una fuente estable de empleo.</li>
+                </ul>
+                <p>
+                    Le invitamos a visitarnos y experimentar de primera mano la diferencia de Chinese Mall Azua. ¡Somos su aliado para el hogar, la oficina y el entretenimiento!
+                </p>
+            </div>
+        </div>
+    </section>
+</main>
+
+</body>
+</html>
