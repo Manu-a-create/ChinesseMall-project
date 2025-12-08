@@ -3,73 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ofertas-descuentos</title>
+    <title>Ofertas y Descuentos - Chinese Mall Azua</title>
 
-    <header>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #ffffff;
+        }
+
+        /* Menú */
+        .menu {
+            background-color: #d70000; 
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 40px 30px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: bold;
+            color: #ffffff;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        .nav-links li a:hover {
+            background-color: #0046ad; 
+            border-radius: 10px;
+        }
+
+        /* Contenedor principal */
+        .contenedor {
+            max-width: 1200px;
+            margin: auto;
+            padding: 40px 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #d70000;
+            margin-bottom: 20px;
+            font-size: 35px;
+        }
+
+        h2 {
+            color: #0046ad;
+        }
+
+        /* Sección productos */
+        .grid-productos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .producto {
+            background: #f5f5f5;
+            border-radius: 12px;
+            padding: 15px;
+            text-align: center;
+            border: 2px solid #0046ad;
+        }
+
+        .producto img {
+            width: 100%;
+            height: 190px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        .precio {
+            font-size: 22px;
+            font-weight: bold;
+            color: #d70000;
+            margin: 10px 0;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #d70000;
+            padding: 10px 15px;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            margin-top: 10px;
+        }
+
+        .btn:hover {
+            background-color: #0046ad;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<header>
   <nav class="menu">
     <div class="logo">CHINESE MALL AZUA</div>
      <ul class="nav-links">
       <li><a href="index.html">Inicio</a></li>
-<li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-<li><a href="Productos.html">Productos</a></li>
-<li><a href="Atencion-clientes.html">Atención al cliente</a></li>
-<li><a href="Ofertas-descuentos.html">Ofertas y descuentos</a></li>
-<li><a href="Novedades.html">Novedades</a></li>
+      <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
+      <li><a href="Productos.html">Productos</a></li>
+      <li><a href="Atencion-clientes.html">Atención al cliente</a></li>
+      <li><a href="Ofertas-descuentos.html">Ofertas y Descuentos</a></li>
+      <li><a href="Novedades.html">Novedades</a></li>
     </ul>
   </nav>
 </header>
 
-<style>
+<div class="contenedor">
+    <h1>🔥 Ofertas y Descuentos Especiales 🔥</h1>
 
-    body {
-  margin: 0;
-  font-family: Arial, Helvetica, sans-serif;
-}
+    <!-- Sección de Ofertas -->
+    <h2>📌 OFERTAS</h2>
+    <div class="grid-productos">
+        <div class="producto">
+            <img src="https://i.imgur.com/7yUVEeC.jpg">
+            <h3>Auriculares Bluetooth</h3>
+            <p class="precio">RD$ 450</p>
+            <a class="btn">Comprar</a>
+        </div>
 
-.logo {
-  
-  color:  #0046ad;
- 
-}
+        <div class="producto">
+            <img src="https://i.imgur.com/GgPjKqG.jpeg">
+            <h3>Smartwatch Deportivo</h3>
+            <p class="precio">RD$ 750</p>
+            <a class="btn">Comprar</a>
+        </div>
 
+        <div class="producto">
+            <img src="https://i.imgur.com/xYVvEyi.jpeg">
+            <h3>Ring Light 10"</h3>
+            <p class="precio">RD$ 600</p>
+            <a class="btn">Comprar</a>
+        </div>
 
-.menu {
-  background-color: #d70000; 
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 50px 30px;
-}
+        <div class="producto">
+            <img src="https://i.imgur.com/qUCIxhb.jpeg">
+            <h3>Bocina Portátil</h3>
+            <p class="precio">RD$ 950</p>
+            <a class="btn">Comprar</a>
+        </div>
+    </div>
 
-.logo {
-  font-size: 22px;
-  font-weight: bold;
-  color: #ffffff;
-  letter-spacing: 1px;
-}
+    <!-- Sección de Descuentos -->
+    <h2 style="margin-top:40px;">📌 DESCUENTOS</h2>
+    <div class="grid-productos">
 
-.nav-links {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  gap: 25px;
-}
+        <div class="producto">
+            <img src="https://i.imgur.com/5pPs9b8.jpeg">
+            <h3>Plancha de Cabello</h3>
+            <p class="precio">RD$ 399</p>
+            <a class="btn">Comprar</a>
+        </div>
 
-.nav-links li a {
-  text-decoration: none;
-  color: white;
-  font-weight: bold;
-  padding: 8px 12px;
-  transition: 0.3s;
-}
+        <div class="producto">
+            <img src="https://i.imgur.com/ef6C5s3.jpeg">
+            <h3>Set de Limpieza Hogar</h3>
+            <p class="precio">RD$ 299</p>
+            <a class="btn">Comprar</a>
+        </div>
 
-.nav-links li a:hover {
-  background-color: #0046ad; 
-  border-radius: 10px;
-}
+        <div class="producto">
+            <img src="https://i.imgur.com/V3W8QpQ.jpeg">
+            <h3>Mini Ventilador USB</h3>
+            <p class="precio">RD$ 250</p>
+            <a class="btn">Comprar</a>
+        </div>
 
+        <div class="producto">
+            <img src="https://i.imgur.com/xBLICnw.jpeg">
+            <h3>Juego de Vasos</h3>
+            <p class="precio">RD$ 320</p>
+            <a class="btn">Comprar</a>
+        </div>
 
-</style>
+    </div>
 
+</div>
+
+</body>
+</html>
