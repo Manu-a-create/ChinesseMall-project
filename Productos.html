@@ -3,181 +3,144 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Productos - CHINESE MALL AZUA</title>
+    <title>Productos - Plaza Chinese Mall Azua</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
     <style>
+        /* --- VARIABLES DE COLOR --- */
+        :root {
+            --color-principal: #E31B23; /* Rojo Vibrante */
+            --color-secundario: #3A8DFF; /* Azul para detalles/enlaces */
+            --color-fondo: #FFFFFF; /* Fondo Blanco */
+            --color-texto: #333333;
+        }
+
+        /* --- ESTILOS GENERALES Y RESETS --- */
         * {
+            box-sizing: border-box;
             margin: 0;
             padding: 0;
-            box-sizing: border-box;
         }
 
         body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            background-color: #ffffff;
+            font-family: 'Poppins', sans-serif; /* Fuente moderna */
+            background-color: var(--color-fondo); /* Fondo blanco solicitado */
+            color: var(--color-texto);
+            line-height: 1.6;
         }
 
-        /* HEADER - Tu código original */
-        .menu {
-            background-color: #d70000; 
-            color: white;
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* --- 1. HEADER (BARRA DE NAVEGACIÓN) --- */
+        .main-header {
+            background-color: var(--color-fondo);
+            border-bottom: 2px solid #EEEEEE;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 50px 30px;
         }
 
         .logo {
-            font-size: 22px;
-            font-weight: bold;
-            color: #ffffff;
-            letter-spacing: 1px;
+            color: var(--color-principal);
+            font-size: 1.8em;
+            font-weight: 700;
         }
 
-        .nav-links {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 25px;
-        }
-
-        .nav-links li a {
+        .main-nav a {
             text-decoration: none;
-            color: white;
+            color: var(--color-texto);
+            margin-left: 25px;
+            font-weight: 500;
+            padding: 5px 0;
+            position: relative;
+        }
+
+        /* Efecto de línea ROJA y AZUL */
+        .main-nav a::after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 3px;
+            background: var(--color-secundario);
+            transition: width 0.3s;
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+        }
+
+        .main-nav a:hover::after, .main-nav a.current::after {
+            width: 100%;
+            background: var(--color-principal);
+        }
+
+        .cart-icon {
+            font-size: 1.5em;
+            color: var(--color-secundario);
+            cursor: pointer;
+            position: relative;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background-color: var(--color-principal);
+            color: var(--color-fondo);
+            border-radius: 50%;
+            padding: 2px 6px;
+            font-size: 0.7em;
             font-weight: bold;
-            padding: 8px 12px;
-            transition: 0.3s;
         }
 
-        .nav-links li a:hover {
-            background-color: #0046ad; 
-            border-radius: 10px;
-        }
-
-        /* SECCIÓN DE PRODUCTOS */
-        .products-section {
-            max-width: 1400px;
-            margin: 40px auto;
-            padding: 0 30px;
+        /* --- 2. MAIN CONTENT Y TÍTULOS --- */
+        .main-content {
+            padding: 40px 0;
         }
 
         .section-title {
             text-align: center;
-            font-size: 36px;
-            color: #d70000;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: #666;
             margin-bottom: 40px;
-            font-size: 18px;
+            color: var(--color-principal);
+            font-size: 2.2em;
+            text-transform: uppercase;
         }
 
-        .search-container {
-            max-width: 600px;
-            margin: 0 auto 40px;
-            position: relative;
-        }
-
-        .search-input {
-            width: 100%;
-            padding: 15px 50px 15px 20px;
-            border: 2px solid #d70000;
-            border-radius: 50px;
-            font-size: 16px;
-            outline: none;
-            transition: all 0.3s;
-        }
-
-        .search-input:focus {
-            border-color: #0046ad;
-            box-shadow: 0 0 0 3px rgba(0, 70, 173, 0.1);
-        }
-
-        .search-icon {
-            position: absolute;
-            right: 20px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: #d70000;
-            font-size: 20px;
-        }
-
-        .categories {
-            display: flex;
-            gap: 15px;
-            margin-bottom: 40px;
-            overflow-x: auto;
-            padding-bottom: 10px;
-        }
-
-        .categories::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .categories::-webkit-scrollbar-track {
-            background: #f1f1f1;
-            border-radius: 10px;
-        }
-
-        .categories::-webkit-scrollbar-thumb {
-            background: #d70000;
-            border-radius: 10px;
-        }
-
-        .category-btn {
-            background: white;
-            border: 2px solid #d70000;
-            padding: 12px 25px;
-            border-radius: 50px;
-            color: #d70000;
-            font-size: 14px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-            white-space: nowrap;
-        }
-
-        .category-btn:hover,
-        .category-btn.active {
-            background: #d70000;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(215, 0, 0, 0.3);
-        }
-
-        .products-grid {
+        /* --- 3. PRODUCT GRID Y CARDS (ESTÉTICA) --- */
+        .product-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
             gap: 30px;
-            margin-bottom: 50px;
         }
 
         .product-card {
-            background: white;
-            border: 2px solid #f0f0f0;
-            border-radius: 15px;
+            background-color: var(--color-fondo);
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             overflow: hidden;
-            transition: all 0.3s;
-            cursor: pointer;
+            transition: transform 0.3s, box-shadow 0.3s;
         }
 
         .product-card:hover {
-            transform: translateY(-8px);
-            border-color: #d70000;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
         }
 
         .product-image-container {
-            position: relative;
-            width: 100%;
-            height: 280px;
+            height: 250px;
             overflow: hidden;
-            background: #f8f8f8;
+            position: relative;
         }
 
         .product-image {
@@ -187,506 +150,231 @@
             transition: transform 0.5s;
         }
 
-        .product-card:hover .product-image {
-            transform: scale(1.1);
-        }
-
-        .discount-badge {
-            position: absolute;
-            top: 15px;
-            right: 15px;
-            background: #d70000;
-            color: white;
-            padding: 8px 15px;
-            border-radius: 50px;
-            font-size: 13px;
-            font-weight: bold;
-            box-shadow: 0 2px 10px rgba(215, 0, 0, 0.4);
+        .product-image-container:hover .product-image {
+            transform: scale(1.05);
         }
 
         .product-info {
             padding: 20px;
-        }
-
-        .product-category {
-            color: #0046ad;
-            font-size: 12px;
-            font-weight: bold;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 8px;
+            text-align: center;
         }
 
         .product-name {
-            font-size: 17px;
-            font-weight: bold;
-            margin-bottom: 12px;
-            color: #333;
-            min-height: 48px;
-            line-height: 1.4;
+            font-size: 1.3em;
+            margin-bottom: 8px;
+            color: var(--color-texto);
         }
 
-        .product-rating {
-            display: flex;
-            align-items: center;
-            gap: 5px;
+        .product-description {
+            color: #666;
+            font-size: 0.9em;
             margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .stars {
-            color: #fbbf24;
-        }
-
-        .rating-count {
-            color: #999;
-            font-size: 13px;
-        }
-
-        .product-price-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 15px;
-        }
-
-        .price-container {
-            display: flex;
-            flex-direction: column;
-            gap: 5px;
+            min-height: 40px;
         }
 
         .product-price {
-            font-size: 28px;
+            font-size: 1.5em;
             font-weight: bold;
-            color: #d70000;
-        }
-
-        .old-price {
-            font-size: 15px;
-            color: #999;
-            text-decoration: line-through;
-        }
-
-        .add-cart-btn {
-            width: 100%;
-            background: #d70000;
-            border: none;
-            padding: 14px;
-            border-radius: 10px;
-            color: white;
-            font-size: 16px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .add-cart-btn:hover {
-            background: #b00000;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 15px rgba(215, 0, 0, 0.4);
-        }
-
-        .cart-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background: #d70000;
-            border: none;
-            width: 70px;
-            height: 70px;
-            border-radius: 50%;
-            color: white;
-            font-size: 28px;
-            cursor: pointer;
-            transition: all 0.3s;
-            box-shadow: 0 4px 20px rgba(215, 0, 0, 0.5);
-            z-index: 999;
-        }
-
-        .cart-button:hover {
-            transform: scale(1.1);
-            box-shadow: 0 6px 30px rgba(215, 0, 0, 0.7);
-        }
-
-        .cart-badge {
-            position: absolute;
-            top: -5px;
-            right: -5px;
-            background: #0046ad;
-            color: white;
-            border-radius: 50%;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            font-weight: bold;
-        }
-
-        .cart-modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.7);
-            z-index: 1000;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .cart-content {
-            background: white;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 700px;
-            max-height: 85vh;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
-        }
-
-        .cart-header {
-            padding: 25px 30px;
-            border-bottom: 2px solid #f0f0f0;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: #d70000;
-            color: white;
-        }
-
-        .cart-title {
-            font-size: 24px;
-            font-weight: bold;
-        }
-
-        .close-btn {
-            background: rgba(255, 255, 255, 0.2);
-            border: none;
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            color: white;
-            font-size: 24px;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .close-btn:hover {
-            background: white;
-            color: #d70000;
-            transform: rotate(90deg);
-        }
-
-        .cart-items {
-            flex: 1;
-            overflow-y: auto;
-            padding: 20px 30px;
-        }
-
-        .cart-items::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .cart-items::-webkit-scrollbar-track {
-            background: #f1f1f1;
-        }
-
-        .cart-items::-webkit-scrollbar-thumb {
-            background: #d70000;
-            border-radius: 10px;
-        }
-
-        .cart-item {
-            display: flex;
-            gap: 20px;
-            background: #f8f8f8;
-            border-radius: 15px;
-            padding: 20px;
+            color: var(--color-secundario);
             margin-bottom: 15px;
-            transition: all 0.3s;
         }
 
-        .cart-item:hover {
-            background: #f0f0f0;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
-        .cart-item-img {
-            width: 80px;
-            height: 80px;
-            object-fit: cover;
-            border-radius: 10px;
-        }
-
-        .cart-item-details {
-            flex: 1;
-        }
-
-        .cart-item-name {
-            font-weight: bold;
-            margin-bottom: 5px;
-            font-size: 15px;
-            color: #333;
-        }
-
-        .cart-item-price {
-            color: #d70000;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        .cart-item-actions {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            align-items: flex-end;
-        }
-
-        .quantity-control {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            background: white;
+        .add-to-cart-btn {
+            background-color: var(--color-principal);
+            color: var(--color-fondo);
+            border: none;
+            padding: 10px 20px;
             border-radius: 50px;
-            padding: 5px;
-            border: 2px solid #d70000;
-        }
-
-        .qty-btn {
-            background: #d70000;
-            border: none;
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
             cursor: pointer;
-            transition: all 0.3s;
+            font-size: 1em;
+            font-weight: 600;
+            transition: background-color 0.3s;
         }
 
-        .qty-btn:hover {
-            background: #b00000;
-            transform: scale(1.1);
+        .add-to-cart-btn:hover {
+            background-color: #A01218;
         }
 
-        .qty-display {
-            min-width: 30px;
+        /* --- 4. FOOTER --- */
+        .main-footer {
+            background-color: var(--color-principal);
+            color: var(--color-fondo);
+            padding: 20px 0;
             text-align: center;
-            font-weight: bold;
-            color: #333;
+            margin-top: 50px;
         }
 
-        .remove-btn {
-            background: #f0f0f0;
-            border: none;
-            padding: 8px 16px;
-            border-radius: 8px;
-            color: #d70000;
-            font-size: 12px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
+        .footer-links a {
+            color: var(--color-fondo);
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s;
         }
 
-        .remove-btn:hover {
-            background: #d70000;
-            color: white;
+        .footer-links a:hover {
+            color: var(--color-secundario);
         }
 
-        .cart-footer {
-            padding: 25px 30px;
-            border-top: 2px solid #f0f0f0;
-            background: #f8f8f8;
-        }
-
-        .cart-total {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-            font-size: 18px;
-        }
-
-        .total-label {
-            font-weight: bold;
-            color: #333;
-        }
-
-        .total-amount {
-            font-size: 32px;
-            font-weight: bold;
-            color: #d70000;
-        }
-
-        .checkout-btn {
-            width: 100%;
-            background: #0046ad;
-            border: none;
-            padding: 18px;
-            border-radius: 15px;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: all 0.3s;
-        }
-
-        .checkout-btn:hover {
-            background: #003580;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0, 70, 173, 0.4);
-        }
-
-        .empty-cart {
-            text-align: center;
-            padding: 60px 20px;
-            color: #999;
-        }
-
-        .empty-cart-icon {
-            font-size: 80px;
-            margin-bottom: 20px;
-            opacity: 0.3;
-        }
-
-        .empty-cart-text {
-            font-size: 18px;
-            font-weight: bold;
-        }
-
+        /* --- RESPONSIVE DESIGN --- */
         @media (max-width: 768px) {
-            .menu {
+            .nav-container {
                 flex-direction: column;
-                padding: 20px;
-            }
-
-            .nav-links {
-                flex-wrap: wrap;
-                justify-content: center;
-                gap: 10px;
-                margin-top: 15px;
-            }
-
-            .products-grid {
-                grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
                 gap: 15px;
             }
 
-            .product-image-container {
-                height: 180px;
+            .main-nav {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                width: 100%;
             }
 
-            .cart-button {
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
-                bottom: 20px;
-                right: 20px;
+            .main-nav a {
+                margin: 5px 0;
+            }
+
+            .cart-icon {
+                position: absolute;
+                top: 20px;
+                right: 5%;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <nav class="menu">
-            <div class="logo">CHINESE MALL AZUA</div>
-            <ul class="nav-links">
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-                <li><a href="Productos.html">Productos</a></li>
-                <li><a href="Atencion-clientes.html">Atención al cliente</a></li>
-                <li><a href="Ofertas-descuentos.html">Ofertas y descuentos</a></li>
-                <li><a href="Novedades.html">Novedades</a></li>
-            </ul>
-        </nav>
+
+    <header class="main-header">
+        <div class="container nav-container">
+            <h1 class="logo">Plaza Chinese Mall Azua</h1>
+            
+            <nav class="main-nav">
+                <a href="index.html" class="nav-link current">Inicio</a>
+                <a href="productos.html" class="nav-link">Productos</a>
+                <a href="ofertas.html" class="nav-link">Ofertas</a>
+                <a href="contacto.html" class="nav-link">Contacto</a>
+            </nav>
+
+            <div class="cart-icon">
+                <i class="fas fa-shopping-cart"></i>
+                <span class="cart-count">3</span>
+            </div>
+        </div>
     </header>
 
-    <div class="products-section">
-        <h1 class="section-title">Nuestros Productos</h1>
-        <p class="section-subtitle">Encuentra todo lo que necesitas al mejor precio</p>
+    <main class="main-content">
+        <div class="container">
+            <h2 class="section-title">Nuestros Productos Destacados</h2>
 
-        <div class="search-container">
-            <input type="text" id="searchInput" class="search-input" placeholder="Buscar productos..." oninput="filterProducts()">
-            <span class="search-icon">🔍</span>
+            <section class="product-grid">
+                
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://via.placeholder.com/400x400?text=TELÉFONO+MOVIL" alt="Teléfono Móvil X-Tech" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Teléfono Inteligente X-Tech Pro</h3>
+                        <p class="product-description">Potencia y estilo en tus manos. 128GB de almacenamiento.</p>
+                        <p class="product-price">$6,500.00 DOP</p>
+                        <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    </div>
+                </article>
+                
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://via.placeholder.com/400x400?text=MAQUILLAJE+GLOW" alt="Set de Maquillaje Glow" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Set de Maquillaje 'Glow Up'</h3>
+                        <p class="product-description">Paleta de 15 colores, alta pigmentación y larga duración.</p>
+                        <p class="product-price">$1,250.00 DOP</p>
+                        <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://via.placeholder.com/400x400?text=AUDÍFONOS" alt="Audífonos Inalámbricos Z-Bass" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Audífonos Inalámbricos Z-Bass</h3>
+                        <p class="product-description">Sonido cristalino y 8 horas de batería. Ergonómicos.</p>
+                        <p class="product-price">$895.00 DOP</p>
+                        <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    </div>
+                </article>
+                
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://via.placeholder.com/400x400?text=TAZA+CERÁMICA" alt="Taza de Cerámica Moderna" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Taza de Cerámica Moderna</h3>
+                        <p class="product-description">Diseño minimalista, ideal para café o té. 400ml.</p>
+                        <p class="product-price">$350.00 DOP</p>
+                        <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://via.placeholder.com/400x400?text=DRON+POCKET" alt="Mini Dron Plegable" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Mini Dron Plegable X5</h3>
+                        <p class="product-description">Fácil de volar y con cámara HD. Perfecto para principiantes.</p>
+                        <p class="product-price">$3,100.00 DOP</p>
+                        <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    </div>
+                </article>
+
+                <article class="product-card">
+                    <div class="product-image-container">
+                        <img src="https://via.placeholder.com/400x400?text=LENTES+DE+SOL" alt="Lentes de Sol Polarizados" class="product-image">
+                    </div>
+                    <div class="product-info">
+                        <h3 class="product-name">Lentes de Sol Deportivos UV400</h3>
+                        <p class="product-description">Marco ligero y lentes polarizados para máxima protección.</p>
+                        <p class="product-price">$550.00 DOP</p>
+                        <button class="add-to-cart-btn">Añadir al Carrito</button>
+                    </div>
+                </article>
+                
+
+            </section>
         </div>
+    </main>
 
-        <div class="categories">
-            <button class="category-btn active" onclick="filterCategory('all')">🔥 Todos</button>
-            <button class="category-btn" onclick="filterCategory('Electrónicos')">📱 Electrónicos</button>
-            <button class="category-btn" onclick="filterCategory('Hogar')">🏠 Hogar</button>
-            <button class="category-btn" onclick="filterCategory('Accesorios')">👜 Accesorios</button>
-            <button class="category-btn" onclick="filterCategory('Herramientas')">🔧 Herramientas</button>
-        </div>
-
-        <div class="products-grid" id="productsGrid"></div>
-    </div>
-
-    <button class="cart-button" onclick="toggleCart()">
-        🛒
-        <span class="cart-badge" id="cartBadge">0</span>
-    </button>
-
-    <div class="cart-modal" id="cartModal" onclick="closeCartOnBackdrop(event)">
-        <div class="cart-content" onclick="event.stopPropagation()">
-            <div class="cart-header">
-                <h2 class="cart-title">🛒 Tu Carrito</h2>
-                <button class="close-btn" onclick="toggleCart()">✕</button>
-            </div>
-            <div class="cart-items" id="cartItems">
-                <div class="empty-cart">
-                    <div class="empty-cart-icon">🛒</div>
-                    <div class="empty-cart-text">Tu carrito está vacío</div>
-                </div>
-            </div>
-            <div class="cart-footer">
-                <div class="cart-total">
-                    <span class="total-label">Total:</span>
-                    <span class="total-amount" id="totalAmount">$0.00</span>
-                </div>
-                <button class="checkout-btn" onclick="checkout()">💳 Finalizar Compra</button>
+    <footer class="main-footer">
+        <div class="container">
+            <p>&copy; 2025 Plaza Chinese Mall Azua. Todos los derechos reservados.</p>
+            <div class="footer-links">
+                <a href="terminos.html">Términos y Condiciones</a> | 
+                <a href="privacidad.html">Política de Privacidad</a>
             </div>
         </div>
-    </div>
+    </footer>
 
     <script>
-        const products = [
-            {id: 1, name: "Audífonos Bluetooth Premium", price: 24.99, oldPrice: 45.99, category: "Electrónicos", rating: 4.8, reviews: 234, discount: "-46%", img: "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&q=80"},
-            {id: 2, name: "Cable USB-C Carga Rápida 3m", price: 5.99, oldPrice: 12.99, category: "Electrónicos", rating: 4.6, reviews: 567, discount: "-54%", img: "https://images.unsplash.com/photo-1585338107529-13afc5f02586?w=500&q=80"},
-            {id: 3, name: "Funda Protectora Antigolpes", price: 8.99, oldPrice: 15.99, category: "Accesorios", rating: 4.7, reviews: 423, discount: "-44%", img: "https://images.unsplash.com/photo-1556656793-08538906a9f8?w=500&q=80"},
-            {id: 4, name: "Powerbank 30000mAh Ultra", price: 29.99, oldPrice: 59.99, category: "Electrónicos", rating: 4.9, reviews: 891, discount: "-50%", img: "https://images.unsplash.com/photo-1609091839311-d5365f9ff1c5?w=500&q=80"},
-            {id: 5, name: "Mouse Gamer RGB Inalámbrico", price: 15.99, oldPrice: 35.99, category: "Electrónicos", rating: 4.5, reviews: 312, discount: "-56%", img: "https://images.unsplash.com/photo-1527814050087-3793815479db?w=500&q=80"},
-            {id: 6, name: "Teclado Mecánico RGB Compacto", price: 34.99, oldPrice: 69.99, category: "Electrónicos", rating: 4.8, reviews: 445, discount: "-50%", img: "https://images.unsplash.com/photo-1587829741301-dc798b83add3?w=500&q=80"},
-            {id: 7, name: "Linterna LED Táctica 5000 Lúmenes", price: 12.99, oldPrice: 29.99, category: "Herramientas", rating: 4.7, reviews: 678, discount: "-57%", img: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500&q=80"},
-            {id: 8, name: "Organizador Cables Magnético", price: 6.99, oldPrice: 14.99, category: "Accesorios", rating: 4.6, reviews: 234, discount: "-53%", img: "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=500&q=80"},
-            {id: 9, name: "Soporte Celular Escritorio", price: 9.99, oldPrice: 19.99, category: "Accesorios", rating: 4.5, reviews: 345, discount: "-50%", img: "https://images.unsplash.com/photo-1616112508344-62878e03c9fa?w=500&q=80"},
-            {id: 10, name: "Cargador Rápido 65W 4 Puertos", price: 19.99, oldPrice: 45.99, category: "Electrónicos", rating: 4.9, reviews: 723, discount: "-57%", img: "https://images.unsplash.com/photo-1583863788434-e58a36330cf0?w=500&q=80"},
-            {id: 11, name: "Reloj Inteligente Deportivo", price: 39.99, oldPrice: 89.99, category: "Electrónicos", rating: 4.7, reviews: 912, discount: "-56%", img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500&q=80"},
-            {id: 12, name: "Ventilador USB Mini Portátil", price: 7.99, oldPrice: 16.99, category: "Electrónicos", rating: 4.4, reviews: 456, discount: "-53%", img: "https://images.unsplash.com/photo-1623530632486-d7c4e0aeb52d?w=500&q=80"},
-            {id: 13, name: "Balanza Digital Cocina Pro", price: 16.99, oldPrice: 32.99, category: "Hogar", rating: 4.8, reviews: 567, discount: "-48%", img: "https://images.unsplash.com/photo-1606923829579-0cb981a83e2e?w=500&q=80"},
-            {id: 14, name: "Kit Destornilladores Precisión 115pcs", price: 22.99, oldPrice: 49.99, category: "Herramientas", rating: 4.9, reviews: 834, discount: "-54%", img: "https://images.unsplash.com/photo-1530124566582-a618bc2615dc?w=500&q=80"},
-            {id: 15, name: "Cinta Adhesiva Nano Doble Cara", price: 4.99, oldPrice: 11.99, category: "Herramientas", rating: 4.6, reviews: 445, discount: "-58%", img: "https://images.unsplash.com/photo-1572981779307-38b8cabb2407?w=500&q=80"},
-            {id: 16, name: "Luz LED Laptop USB Flexible", price: 8.99, oldPrice: 18.99, category: "Electrónicos", rating: 4.5, reviews: 234, discount: "-53%", img: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500&q=80"},
-            {id: 17, name: "Adaptador HDMI a VGA + Audio", price: 9.99, oldPrice: 22.99, category: "Electrónicos", rating: 4.7, reviews: 389, discount: "-57%", img: "https://images.unsplash.com/photo-1625948515291-69613efd103f?w=500&q=80"},
-            {id: 18, name: "Bolsas Herméticas Reutilizables 20pcs", price: 7.99, oldPrice: 16.99, category: "Hogar", rating: 4.6, reviews: 512, discount: "-53%", img: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=500&q=80"},
-            {id: 19, name: "Espejo Maquillaje LED Táctil 3 Tonos", price: 24.99, oldPrice: 54.99, category: "Hogar", rating: 4.8, reviews: 678, discount: "-55%", img: "https://images.unsplash.com/photo-1616112508344-62878e03c9fa?w=500&q=80"},
-            {id: 20, name: "Guantes Silicona Resistentes Calor", price: 8.99, oldPrice: 19.99, category: "Hogar", rating: 4.7, reviews: 423, discount: "-55%", img: "https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=500&q=80"},
-            {id: 21, name: "Tijeras Cocina Multiuso Acero", price: 6.99, oldPrice: 15.99, category: "Hogar", rating: 4.5, reviews: 345, discount: "-56%", img: "https://images.unsplash.com/photo-1591804683242-f6ecf1e5d6f9?w=500&q=80"},
-            {id: 22, name: "Botella Térmica Acero 750ml", price: 14.99, oldPrice: 32.99, category: "Hogar", rating: 4.8, reviews: 789, discount: "-55%", img: "https://images.unsplash.com/photo-1602143407151-7111542de6e8?w=500&q=80"},
-            {id: 23, name: "Paraguas Automático Anti-Viento", price: 12.99, oldPrice: 27.99, category: "Accesorios", rating: 4.6, reviews: 456, discount: "-54%", img: "https://images.unsplash.com/photo-1505533321630-975218a5f66f?w=500&q=80"},
-            {id: 24, name: "Calculadora Científica Casio", price: 18.99, oldPrice: 39.99, category: "Electrónicos", rating: 4.9, reviews: 912, discount: "-53%", img: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&q=80"},
-            {id: 25, name: "Luces LED Decorativas RGB 10m", price: 16.99, oldPrice: 35.99, category: "Hogar", rating: 4.7, reviews: 645, discount: "-53%", img: "https://images.unsplash.com/photo-1513506003901-1e6a229e2d15?w=500&q=80"},
-            {id: 26, name: "Webcam Full HD 1080p Micrófono", price: 29.99, oldPrice: 64.99, category: "Electrónicos", rating: 4.8, reviews: 523, discount: "-54%", img: "https://images.unsplash.com/photo-1589739900243-c391e31e4c72?w=500&q=80"},
-            {id: 27, name: "Parlante Bluetooth Portátil 20W", price: 26.99, oldPrice: 59.99, category: "Electrónicos", rating: 4.9, reviews: 834, discount: "-55%", img: "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?w=500&q=80"},
-            {id: 28, name: "Báscula Baño Digital Inteligente", price: 21.99, oldPrice: 47.99, category: "Hogar", rating: 4.7, reviews: 567, discount: "-54%", img: "https://images.unsplash.com/photo-1611694417274-193e9f327597?w=500&q=80"},
-            {id: 29, name: "Mini Aspiradora Portátil USB", price: 19.99, oldPrice: 42.99, category: "Hogar", rating: 4.6, reviews: 445, discount: "-54%", img: "https://images.unsplash.com/photo-1558317374-067fb5f30001?w=500&q=80"},
-            {id: 30, name: "Multímetro Digital Profesional", price: 17.99, oldPrice:
+        // Si no se usa JavaScript complejo, este script es opcional, 
+        // pero puedes agregar aquí la lógica de contar el carrito.
+        // Ejemplo simple:
+        const cartButton = document.querySelector('.cart-icon');
+        cartButton.addEventListener('click', () => {
+            alert('Abriendo el carrito de compras...');
+        });
+        
+        document.querySelectorAll('.add-to-cart-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                const countElement = document.querySelector('.cart-count');
+                let currentCount = parseInt(countElement.textContent);
+                countElement.textContent = currentCount + 1;
+                alert('¡Producto añadido!');
+            });
+        });
+    </script>
+</body>
+</html>
+
 
 
 
