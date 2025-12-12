@@ -1,93 +1,682 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Chinesse Small — Descuentos y Ofertas</title>
+  <meta name="description" content="Página con 25 descuentos y 25 ofertas — Chinesse Small (rojo, blanco y azul)." />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --bg:#ffffff; /* blanco */
+      --card:#f4f7ff; /* blanco-azulado */
+      --accent:#ff0000; /* rojo */
+      --muted:#0033cc;  /* azul */
+      --glass:rgba(0,51,204,0.06);
+      --maxw:1200px;
+    }
+    *{box-sizing:border-box}
+    body{font-family:Inter,system-ui,Arial,sans-serif;margin:0;background:linear-gradient(180deg,var(--bg) 0%, #f0f4ff 70%);color:#02204a;min-height:100vh}
+    .container{width:94%;max-width:var(--maxw);margin:20px auto}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--muted));display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:1.25rem}
+    h1{margin:0;color:var(--accent)}
+    .top-info{color:var(--muted);font-weight:600}
+
+    nav{display:flex;gap:12px;align-items:center}
+    .search{display:flex;gap:8px;align-items:center;background:var(--glass);padding:8px;border-radius:10px;border:1px solid var(--muted)}
+    .search input{background:transparent;border:0;color:inherit;outline:none;width:260px}
+    .chip{background:white;border:2px solid var(--muted);padding:8px 12px;border-radius:999px;cursor:pointer;color:var(--muted);font-weight:700}
+
+    .section-hero{margin-top:18px;background:linear-gradient(90deg, rgba(255,0,0,0.08), rgba(0,51,204,0.06));padding:18px;border-radius:14px;display:flex;align-items:center;justify-content:space-between;gap:12px;border:2px solid var(--accent)}
+    .section-hero h2{margin:0;color:var(--accent)}
+    .section-hero p{margin:0;color:var(--muted)}
+    .cta{background:var(--accent);color:white;padding:10px 14px;border-radius:10px;font-weight:700;border:0;cursor:pointer}
+
+    .section-title{display:flex;justify-content:space-between;align-items:center;margin-top:20px}
+    .section-title h3{margin:0;color:var(--muted)}
+
+    .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-top:12px}
+    .card{background:white;padding:12px;border-radius:12px;border:2px solid var(--muted);display:flex;flex-direction:column}
+    .card img{width:100%;height:150px;object-fit:cover;border-radius:8px;border:1px solid #ddd}
+    .title{font-weight:700;margin-top:10px;color:var(--accent)}
+    .price-row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+    .price{font-weight:800;color:var(--accent)}
+    .old{color:#6b7280;text-decoration:line-through;font-size:0.86rem}
+    .badge{background:var(--accent);color:white;padding:6px 8px;border-radius:8px;font-weight:800}
+    .actions{display:flex;gap:8px;margin-top:12px}
+    .btn{flex:1;padding:8px;border-radius:8px;border:0;cursor:pointer;font-weight:700}
+    .btn.primary{background:var(--accent);color:white}
+    .btn.ghost{background:white;border:2px solid var(--muted);color:var(--muted)}
+
+    footer{margin:28px 0 48px;color:var(--muted);font-size:0.95rem;text-align:center;font-weight:700}
+
+    @media (max-width:720px){
+      .section-hero{flex-direction:column;align-items:flex-start}
+      .search input{width:140px}
+    }
+  </style>
 </head>
-
 <body>
-
-<header>
-  <nav class="menu">
-    <div class="logo">CHINESE MALL AZUA</div>
-     <ul class="nav-links">
-      <li><a href="index.html">Inicio</a></li>
-      <li><a href="sobre-nosotros.html">Sobre Nosotros</a></li>
-      <li><a href="Productos.html">Productos</a></li>
-      <li><a href="Atencion-clientes.html">Atención al cliente</a></li>
-      <li><a href="Ofertas-descuentos.html">Ofertas y Descuentos</a></li>
-      <li><a href="Novedades.html">Novedades</a></li>
-    </ul>
-  </nav>
-</header>
-
-<div class="contenedor">
-    <h1>🔥 Ofertas y Descuentos Especiales 🔥</h1>
-
-    <!-- Sección de Ofertas -->
-    <h2>📌 OFERTAS</h2>
-    <div class="grid-productos">
-        <div class="producto">
-            <img src="https://i.imgur.com/7yUVEeC.jpg">
-            <h3>Auriculares Bluetooth</h3>
-            <p class="precio">RD$ 450</p>
-            <a class="btn">Comprar</a>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">中</div>
+        <div>
+          <h1>Tienda China</h1>
+          <div class="top-info">Ofertas y Descuentos • Envíos internacionales</div>
         </div>
+      </div>
 
-        <div class="producto">
-            <img src="https://i.imgur.com/GgPjKqG.jpeg">
-            <h3>Smartwatch Deportivo</h3>
-            <p class="precio">RD$ 750</p>
-            <a class="btn">Comprar</a>
+      <nav>
+        <div class="search" role="search">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M21 21l-4.35-4.35" stroke="var(--muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          <input id="q" placeholder="Buscar productos..." aria-label="Buscar" />
         </div>
+        <button class="chip" data-cat="all">Todas</button>
+        <button class="chip" data-cat="electronics">Electrónica</button>
+        <button class="chip" data-cat="fashion">Moda</button>
+        <button class="chip" data-cat="home">Hogar</button>
+      </nav>
+    </header>
 
-        <div class="producto">
-            <img src="https://i.imgur.com/xYVvEyi.jpeg">
-            <h3>Ring Light 10"</h3>
-            <p class="precio">RD$ 600</p>
-            <a class="btn">Comprar</a>
-        </div>
+    <section class="section-hero">
+      <div>
+        <h2>Descuentos y Ofertas Especiales</h2>
+        <p>25 Descuentos • 25 Ofertas — Productos seleccionados para ti.</p>
+        <div style="margin-top:10px;color:var(--muted)">Cupón general: <strong>CHINA-RGB</strong></div>
+      </div>
+      <div style="text-align:right">
+        <button class="cta" id="applyCoupon">COPIAR CUPÓN</button>
+      </div>
+    </section>
 
-        <div class="producto">
-            <img src="https://i.imgur.com/qUCIxhb.jpeg">
-            <h3>Bocina Portátil</h3>
-            <p class="precio">RD$ 950</p>
-            <a class="btn">Comprar</a>
-        </div>
+    <!-- SECCIÓN: DESCUENTOS (25) -->
+    <div class="section-title" style="margin-top:24px">
+      <h3>Descuentos — 25 productos</h3>
+      <div style="color:var(--muted)">Filtrar / Ordenar</div>
     </div>
 
-    <!-- Sección de Descuentos -->
-    <h2 style="margin-top:40px;">📌 DESCUENTOS</h2>
-    <div class="grid-productos">
+    <section class="grid" id="descuentos">
+      <!-- 25 tarjetas: descuentos -->
+      <!-- 1 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?headphones" alt="Auriculares Bluetooth X-Beat">
+        <div class="title">Auriculares Bluetooth X-Beat</div>
+        <div class="price-row"><div><div class="price">US$24.99</div><div class="old">US$59.99</div></div><div class="badge">-58%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Auriculares Bluetooth X-Beat')">Comprar</button><button class="btn ghost" onclick="copyCoupon('CHINA-RGB')">Cupón</button></div>
+      </article>
+      <!-- 2 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?lamp,led" alt="Lámpara LED Inteligente">
+        <div class="title">Lámpara LED Inteligente</div>
+        <div class="price-row"><div><div class="price">US$18.50</div><div class="old">US$35.00</div></div><div class="badge">-47%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Lámpara LED Inteligente')">Comprar</button><button class="btn ghost" onclick="copyCoupon('LAMP-10')">Cupón</button></div>
+      </article>
+      <!-- 3 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?watch" alt="Reloj Minimal">
+        <div class="title">Reloj Minimal - Resistente al agua</div>
+        <div class="price-row"><div><div class="price">US$12.00</div><div class="old">US$29.00</div></div><div class="badge">-58%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Reloj Minimal')">Comprar</button><button class="btn ghost" onclick="copyCoupon('MODA10')">Cupón</button></div>
+      </article>
+      <!-- 4 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?gimbal" alt="Gimbal 3 ejes">
+        <div class="title">Gimbal 3 ejes — Estabilizador</div>
+        <div class="price-row"><div><div class="price">US$39.99</div><div class="old">US$79.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Gimbal 3 ejes')">Comprar</button><button class="btn ghost" onclick="copyCoupon('VIDEO20')">Cupón</button></div>
+      </article>
+      <!-- 5 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?organizer" alt="Organizador plegable">
+        <div class="title">Organizador plegable para armario</div>
+        <div class="price-row"><div><div class="price">US$9.99</div><div class="old">US$19.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Organizador plegable')">Comprar</button><button class="btn ghost" onclick="copyCoupon('HOGAR5')">Cupón</button></div>
+      </article>
+      <!-- 6 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?handbag" alt="Bolso Crossbody">
+        <div class="title">Bolso Crossbody — Diseño único</div>
+        <div class="price-row"><div><div class="price">US$15.75</div><div class="old">US$39.00</div></div><div class="badge">-60%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Bolso Crossbody')">Comprar</button><button class="btn ghost" onclick="copyCoupon('BOLSO15')">Cupón</button></div>
+      </article>
+      <!-- 7 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?charger,wireless" alt="Cargador inalámbrico">
+        <div class="title">Cargador inalámbrico Qi 15W</div>
+        <div class="price-row"><div><div class="price">US$7.99</div><div class="old">US$19.99</div></div><div class="badge">-60%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Cargador inalámbrico Qi')">Comprar</button><button class="btn ghost" onclick="copyCoupon('QI7')">Cupón</button></div>
+      </article>
+      <!-- 8 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?mug" alt="Taza térmica">
+        <div class="title">Taza térmica 500ml</div>
+        <div class="price-row"><div><div class="price">US$6.50</div><div class="old">US$12.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Taza térmica 500ml')">Comprar</button><button class="btn ghost" onclick="copyCoupon('TAZA10')">Cupón</button></div>
+      </article>
+      <!-- 9 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?tablet" alt="Tablet 10">
+        <div class="title">Tablet 10'' Full HD</div>
+        <div class="price-row"><div><div class="price">US$69.99</div><div class="old">US$129.99</div></div><div class="badge">-46%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Tablet 10 Full HD')">Comprar</button><button class="btn ghost" onclick="copyCoupon('TABLET20')">Cupón</button></div>
+      </article>
+      <!-- 10 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?sneakers" alt="Zapatillas">
+        <div class="title">Zapatillas deportivas AirFlex</div>
+        <div class="price-row"><div><div class="price">US$22.99</div><div class="old">US$49.99</div></div><div class="badge">-54%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Zapatillas AirFlex')">Comprar</button><button class="btn ghost" onclick="copyCoupon('AIRFLEX10')">Cupón</button></div>
+      </article>
+      <!-- 11 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?drone" alt="Drone 4K">
+        <div class="title">Drone 4K con estabilización</div>
+        <div class="price-row"><div><div class="price">US$89.99</div><div class="old">US$159.99</div></div><div class="badge">-44%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Drone 4K')">Comprar</button><button class="btn ghost" onclick="copyCoupon('DRONE30')">Cupón</button></div>
+      </article>
+      <!-- 12 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?vacuum" alt="Aspiradora portátil">
+        <div class="title">Aspiradora portátil USB</div>
+        <div class="price-row"><div><div class="price">US$29.99</div><div class="old">US$59.99</div></div><div class="badge">-49%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Aspiradora portátil')">Comprar</button><button class="btn ghost" onclick="copyCoupon('CLEAN10')">Cupón</button></div>
+      </article>
+      <!-- 13 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?sunglasses" alt="Gafas polarizadas">
+        <div class="title">Gafas de sol polarizadas</div>
+        <div class="price-row"><div><div class="price">US$8.99</div><div class="old">US$19.99</div></div><div class="badge">-55%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Gafas polarizadas')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SUNNY5')">Cupón</button></div>
+      </article>
+      <!-- 14 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?speaker" alt="Mini bocina">
+        <div class="title">Mini Bocina Bluetooth</div>
+        <div class="price-row"><div><div class="price">US$14.99</div><div class="old">US$29.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Mini Bocina Bluetooth')">Comprar</button><button class="btn ghost" onclick="copyCoupon('MUSIC10')">Cupón</button></div>
+      </article>
+      <!-- 15 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?kitchen" alt="Set utensilios">
+        <div class="title">Set de utensilios de cocina</div>
+        <div class="price-row"><div><div class="price">US$25.99</div><div class="old">US$49.99</div></div><div class="badge">-48%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Set utensilios')">Comprar</button><button class="btn ghost" onclick="copyCoupon('COOK10')">Cupón</button></div>
+      </article>
+      <!-- 16 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?projector" alt="Mini proyector">
+        <div class="title">Mini Proyector LED</div>
+        <div class="price-row"><div><div class="price">US$49.99</div><div class="old">US$99.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Mini Proyector')">Comprar</button><button class="btn ghost" onclick="copyCoupon('MOVIE20')">Cupón</button></div>
+      </article>
+      <!-- 17 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?jacket" alt="Chaqueta ligera">
+        <div class="title">Chaqueta ligera impermeable</div>
+        <div class="price-row"><div><div class="price">US$34.99</div><div class="old">US$69.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Chaqueta ligera')">Comprar</button><button class="btn ghost" onclick="copyCoupon('JACKET15')">Cupón</button></div>
+      </article>
+      <!-- 18 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?keyboard,mechanical" alt="Teclado gamer">
+        <div class="title">Teclado Gamer RGB</div>
+        <div class="price-row"><div><div class="price">US$39.99</div><div class="old">US$79.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Teclado Gamer RGB')">Comprar</button><button class="btn ghost" onclick="copyCoupon('GAME10')">Cupón</button></div>
+      </article>
+      <!-- 19 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?mattress" alt="Almohada ergonómica">
+        <div class="title">Almohada ergonómica memory foam</div>
+        <div class="price-row"><div><div class="price">US$19.99</div><div class="old">US$39.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Almohada ergonómica')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SLEEP10')">Cupón</button></div>
+      </article>
+      <!-- 20 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?camera" alt="Cámara deportiva">
+        <div class="title">Cámara deportiva 4K</div>
+        <div class="price-row"><div><div class="price">US$59.99</div><div class="old">US$119.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Cámara deportiva 4K')">Comprar</button><button class="btn ghost" onclick="copyCoupon('ACTION20')">Cupón</button></div>
+      </article>
+      <!-- 21 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?belt" alt="Cinturón de cuero">
+        <div class="title">Cinturón de cuero PU</div>
+        <div class="price-row"><div><div class="price">US$9.50</div><div class="old">US$19.99</div></div><div class="badge">-52%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Cinturón de cuero PU')">Comprar</button><button class="btn ghost" onclick="copyCoupon('BELT5')">Cupón</button></div>
+      </article>
+      <!-- 22 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?kettle" alt="Tetera eléctrica">
+        <div class="title">Tetera eléctrica 1.7L</div>
+        <div class="price-row"><div><div class="price">US$21.99</div><div class="old">US$39.99</div></div><div class="badge">-45%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Tetera eléctrica')">Comprar</button><button class="btn ghost" onclick="copyCoupon('TEA5')">Cupón</button></div>
+      </article>
+      <!-- 23 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?mouse,wireless" alt="Mouse inalámbrico">
+        <div class="title">Mouse inalámbrico ergonómico</div>
+        <div class="price-row"><div><div class="price">US$11.99</div><div class="old">US$24.99</div></div><div class="badge">-52%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Mouse inalámbrico')">Comprar</button><button class="btn ghost" onclick="copyCoupon('MOUSE5')">Cupón</button></div>
+      </article>
+      <!-- 24 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?hat" alt="Gorra deportiva">
+        <div class="title">Gorra deportiva ajustable</div>
+        <div class="price-row"><div><div class="price">US$6.99</div><div class="old">US$14.99</div></div><div class="badge">-53%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Gorra deportiva')">Comprar</button><button class="btn ghost" onclick="copyCoupon('HAT5')">Cupón</button></div>
+      </article>
+      <!-- 25 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?blanket" alt="Manta térmica">
+        <div class="title">Manta térmica 200x150cm</div>
+        <div class="price-row"><div><div class="price">US$17.99</div><div class="old">US$34.99</div></div><div class="badge">-49%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Manta térmica')">Comprar</button><button class="btn ghost" onclick="copyCoupon('BLANKET10')">Cupón</button></div>
+      </article>
+    </section>
 
-        <div class="producto">
-            <img src="https://i.imgur.com/5pPs9b8.jpeg">
-            <h3>Plancha de Cabello</h3>
-            <p class="precio">RD$ 399</p>
-            <a class="btn">Comprar</a>
-        </div>
-
-        <div class="producto">
-            <img src="https://i.imgur.com/ef6C5s3.jpeg">
-            <h3>Set de Limpieza Hogar</h3>
-            <p class="precio">RD$ 299</p>
-            <a class="btn">Comprar</a>
-        </div>
-
-        <div class="producto">
-            <img src="https://i.imgur.com/V3W8QpQ.jpeg">
-            <h3>Mini Ventilador USB</h3>
-            <p class="precio">RD$ 250</p>
-            <a class="btn">Comprar</a>
-        </div>
-
-        <div class="producto">
-            <img src="https://i.imgur.com/xBLICnw.jpeg">
-            <h3>Juego de Vasos</h3>
-            <p class="precio">RD$ 320</p>
-            <a class="btn">Comprar</a>
-        </div>
-
+    <!-- SECCIÓN: OFERTAS (25) -->
+    <div class="section-title" style="margin-top:28px">
+      <h3>Ofertas especiales — 25 productos</h3>
+      <div style="color:var(--muted)">Promociones destacadas</div>
     </div>
 
-</div>
+    <section class="grid" id="ofertas">
+      <!-- 25 tarjetas: ofertas -->
+      <!-- 1 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?smartwatch" alt="Smartwatch deportivo">
+        <div class="title">Smartwatch Deportivo V3</div>
+        <div class="price-row"><div><div class="price">US$29.99</div><div class="old">US$59.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Smartwatch Deportivo V3')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SMART10')">Cupón</button></div>
+      </article>
+      <!-- 2 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?blender" alt="Licuadora portátil">
+        <div class="title">Licuadora portátil USB</div>
+        <div class="price-row"><div><div class="price">US$15.99</div><div class="old">US$29.99</div></div><div class="badge">-47%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Licuadora portátil')">Comprar</button><button class="btn ghost" onclick="copyCoupon('BLEND10')">Cupón</button></div>
+      </article>
+      <!-- 3 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?earbuds" alt="Auriculares true wireless">
+        <div class="title">Auriculares True Wireless Z7</div>
+        <div class="price-row"><div><div class="price">US$19.99</div><div class="old">US$39.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Auriculares Z7')">Comprar</button><button class="btn ghost" onclick="copyCoupon('EARBUD5')">Cupón</button></div>
+      </article>
+      <!-- 4 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?powerbank" alt="Power bank">
+        <div class="title">Power Bank 20000mAh</div>
+        <div class="price-row"><div><div class="price">US$21.99</div><div class="old">US$44.99</div></div><div class="badge">-51%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Power Bank 20000mAh')">Comprar</button><button class="btn ghost" onclick="copyCoupon('POWER10')">Cupón</button></div>
+      </article>
+      <!-- 5 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?heater" alt="Calentador portátil">
+        <div class="title">Calentador portátil compacto</div>
+        <div class="price-row"><div><div class="price">US$27.99</div><div class="old">US$49.99</div></div><div class="badge">-44%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Calentador portátil')">Comprar</button><button class="btn ghost" onclick="copyCoupon('WARM10')">Cupón</button></div>
+      </article>
+      <!-- 6 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?backpack" alt="Mochila urbana">
+        <div class="title">Mochila urbana resistente</div>
+        <div class="price-row"><div><div class="price">US$34.50</div><div class="old">US$69.99</div></div><div class="badge">-51%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Mochila urbana')">Comprar</button><button class="btn ghost" onclick="copyCoupon('BAG15')">Cupón</button></div>
+      </article>
+      <!-- 7 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?camera,dslr" alt="Lente para smartphone">
+        <div class="title">Kit lente para smartphone</div>
+        <div class="price-row"><div><div class="price">US$12.99</div><div class="old">US$24.99</div></div><div class="badge">-48%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Kit lente smartphone')">Comprar</button><button class="btn ghost" onclick="copyCoupon('LENS5')">Cupón</button></div>
+      </article>
+      <!-- 8 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?fan" alt="Ventilador USB">
+        <div class="title">Ventilador USB silencioso</div>
+        <div class="price-row"><div><div class="price">US$9.99</div><div class="old">US$19.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Ventilador USB')">Comprar</button><button class="btn ghost" onclick="copyCoupon('COOL5')">Cupón</button></div>
+      </article>
+      <!-- 9 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?socks" alt="Calcetines térmicos">
+        <div class="title">Pack calcetines térmicos (3 pares)</div>
+        <div class="price-row"><div><div class="price">US$7.49</div><div class="old">US$14.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Calcetines térmicos')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SOCKS5')">Cupón</button></div>
+      </article>
+      <!-- 10 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?lamp,desk" alt="Lampara de escritorio LED">
+        <div class="title">Lámpara de escritorio LED</div>
+        <div class="price-row"><div><div class="price">US$11.99</div><div class="old">US$24.99</div></div><div class="badge">-52%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Lámpara de escritorio LED')">Comprar</button><button class="btn ghost" onclick="copyCoupon('DESK10')">Cupón</button></div>
+      </article>
+      <!-- 11 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?storage,box" alt="Caja organizadora">
+        <div class="title">Caja organizadora plegable</div>
+        <div class="price-row"><div><div class="price">US$8.99</div><div class="old">US$17.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Caja organizadora')">Comprar</button><button class="btn ghost" onclick="copyCoupon('STORE5')">Cupón</button></div>
+      </article>
+      <!-- 12 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?scarf" alt="Bufanda térmica">
+        <div class="title">Bufanda térmica unisex</div>
+        <div class="price-row"><div><div class="price">US$9.49</div><div class="old">US$18.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Bufanda térmica')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SCARF5')">Cupón</button></div>
+      </article>
+      <!-- 13 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?flashlight" alt="Linterna recargable">
+        <div class="title">Linterna recargable USB</div>
+        <div class="price-row"><div><div class="price">US$6.99</div><div class="old">US$13.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Linterna recargable')">Comprar</button><button class="btn ghost" onclick="copyCoupon('LIGHT5')">Cupón</button></div>
+      </article>
+      <!-- 14 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?toys" alt="Juguete educativo">
+        <div class="title">Juguete educativo infantil</div>
+        <div class="price-row"><div><div class="price">US$12.49</div><div class="old">US$24.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Juguete educativo')">Comprar</button><button class="btn ghost" onclick="copyCoupon('KIDS10')">Cupón</button></div>
+      </article>
+      <!-- 15 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?belt,leather" alt="Cinturón hombre">
+        <div class="title">Cinturón clásico hombre</div>
+        <div class="price-row"><div><div class="price">US$11.99</div><div class="old">US$24.99</div></div><div class="badge">-52%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Cinturón clásico')">Comprar</button><button class="btn ghost" onclick="copyCoupon('BELT10')">Cupón</button></div>
+      </article>
+      <!-- 16 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?fitness,tracker" alt="Pulsera fitness">
+        <div class="title">Pulsera fitness con pulsómetro</div>
+        <div class="price-row"><div><div class="price">US$17.99</div><div class="old">US$34.99</div></div><div class="badge">-49%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Pulsera fitness')">Comprar</button><button class="btn ghost" onclick="copyCoupon('FIT10')">Cupón</button></div>
+      </article>
+      <!-- 17 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?cutlery" alt="Juego cubiertos">
+        <div class="title">Juego de cubiertos 24 piezas</div>
+        <div class="price-row"><div><div class="price">US$22.99</div><div class="old">US$44.99</div></div><div class="badge">-49%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Juego de cubiertos')">Comprar</button><button class="btn ghost" onclick="copyCoupon('DINNER10')">Cupón</button></div>
+      </article>
+      <!-- 18 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?wallet" alt="Cartera hombre">
+        <div class="title">Cartera delgada de cuero</div>
+        <div class="price-row"><div><div class="price">US$9.99</div><div class="old">US$19.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Cartera delgada')">Comprar</button><button class="btn ghost" onclick="copyCoupon('WALLET5')">Cupón</button></div>
+      </article>
+      <!-- 19 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?hdmi,cable" alt="Cable HDMI">
+        <div class="title">Cable HDMI 2.0 — 2m</div>
+        <div class="price-row"><div><div class="price">US$5.99</div><div class="old">US$11.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Cable HDMI 2m')">Comprar</button><button class="btn ghost" onclick="copyCoupon('CABLE5')">Cupón</button></div>
+      </article>
+      <!-- 20 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?shelf" alt="Estantería plegable">
+        <div class="title">Estantería plegable multiuso</div>
+        <div class="price-row"><div><div class="price">US$39.99</div><div class="old">US$79.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Estantería plegable')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SHELF10')">Cupón</button></div>
+      </article>
+      <!-- 21 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?earring" alt="Aretes mujer">
+        <div class="title">Aretes modernos (par)</div>
+        <div class="price-row"><div><div class="price">US$4.99</div><div class="old">US$9.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Aretes modernos')">Comprar</button><button class="btn ghost" onclick="copyCoupon('JEWEL5')">Cupón</button></div>
+      </article>
+      <!-- 22 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?usb,hub" alt="Hub USB">
+        <div class="title">Hub USB 4 puertos</div>
+        <div class="price-row"><div><div class="price">US$8.49</div><div class="old">US$16.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Hub USB 4 puertos')">Comprar</button><button class="btn ghost" onclick="copyCoupon('HUB5')">Cupón</button></div>
+      </article>
+      <!-- 23 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?clock" alt="Reloj de pared">
+        <div class="title">Reloj de pared minimalista</div>
+        <div class="price-row"><div><div class="price">US$14.99</div><div class="old">US$29.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Reloj de pared')">Comprar</button><button class="btn ghost" onclick="copyCoupon('CLOCK5')">Cupón</button></div>
+      </article>
+      <!-- 24 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?necklace" alt="Collar mujer">
+        <div class="title">Collar elegante</div>
+        <div class="price-row"><div><div class="price">US$6.99</div><div class="old">US$13.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Collar elegante')">Comprar</button><button class="btn ghost" onclick="copyCoupon('NECK5')">Cupón</button></div>
+      </article>
+      <!-- 25 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?flash,led" alt="Anillo de luz">
+        <div class="title">Ring Light 26cm para streaming</div>
+        <div class="price-row"><div><div class="price">US$19.99</div><div class="old">US$39.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Ring Light 26cm')">Comprar</button><button class="btn ghost" onclick="copyCoupon('LIGHT10')">Cupón</button></div>
+      </article>
+    </section>
 
+    <!-- SECCIÓN: OFERTAS (25) COMPLETA -->
+    <section class="grid" id="ofertas">
+      <!-- 1 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?earphones" alt="Auriculares deportivos">
+        <div class="title">Auriculares deportivos PRO-X</div>
+        <div class="price-row"><div><div class="price">US$27.99</div><div class="old">US$54.99</div></div><div class="badge">-49%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Auriculares deportivos PRO-X')">Comprar</button><button class="btn ghost" onclick="copyCoupon('PROX10')">Cupón</button></div>
+      </article>
+      <!-- 2 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?tablet,android" alt="Tablet mini">
+        <div class="title">Tablet Mini Plus 8''</div>
+        <div class="price-row"><div><div class="price">US$59.99</div><div class="old">US$119.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Tablet Mini Plus 8')">Comprar</button><button class="btn ghost" onclick="copyCoupon('TAB8')">Cupón</button></div>
+      </article>
+      <!-- 3 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?coffee,maker" alt="Cafetera portátil">
+        <div class="title">Cafetera portátil Espresso</div>
+        <div class="price-row"><div><div class="price">US$34.50</div><div class="old">US$69.00</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Cafetera portátil Espresso')">Comprar</button><button class="btn ghost" onclick="copyCoupon('ESPRESSO10')">Cupón</button></div>
+      </article>
+      <!-- 4 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?dress" alt="Vestido mujer">
+        <div class="title">Vestido veraniego elegante</div>
+        <div class="price-row"><div><div class="price">US$18.99</div><div class="old">US$39.99</div></div><div class="badge">-52%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Vestido veraniego')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SUMMER15')">Cupón</button></div>
+      </article>
+      <!-- 5 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?smartphone" alt="Smartphone económico">
+        <div class="title">Smartphone Eco S10</div>
+        <div class="price-row"><div><div class="price">US$99.99</div><div class="old">US$179.99</div></div><div class="badge">-44%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Smartphone Eco S10')">Comprar</button><button class="btn ghost" onclick="copyCoupon('ECO10')">Cupón</button></div>
+      </article>
+      <!-- 6 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?vacuum,robot" alt="Robot aspirador">
+        <div class="title">Robot Aspirador Mini</div>
+        <div class="price-row"><div><div class="price">US$79.99</div><div class="old">US$149.99</div></div><div class="badge">-46%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Robot Aspirador Mini')">Comprar</button><button class="btn ghost" onclick="copyCoupon('ROBOT20')">Cupón</button></div>
+      </article>
+      <!-- 7 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?suit" alt="Traje hombre">
+        <div class="title">Traje casual hombre</div>
+        <div class="price-row"><div><div class="price">US$49.99</div><div class="old">US$99.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Traje casual hombre')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SUIT10')">Cupón</button></div>
+      </article>
+      <!-- 8 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?ssd,drive" alt="SSD externo">
+        <div class="title">SSD portátil 512GB</div>
+        <div class="price-row"><div><div class="price">US$59.99</div><div class="old">US$109.99</div></div><div class="badge">-45%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('SSD portátil 512GB')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SSD15')">Cupón</button></div>
+      </article>
+      <!-- 9 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?fridge,mini" alt="Mini nevera">
+        <div class="title">Mini Nevera portátil 12L</div>
+        <div class="price-row"><div><div class="price">US$49.99</div><div class="old">US$89.99</div></div><div class="badge">-44%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Mini Nevera 12L')">Comprar</button><button class="btn ghost" onclick="copyCoupon('COOL20')">Cupón</button></div>
+      </article>
+      <!-- 10 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?sandal" alt="Sandalias">
+        <div class="title">Sandalias de playa</div>
+        <div class="price-row"><div><div class="price">US$9.99</div><div class="old">US$19.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Sandalias de playa')">Comprar</button><button class="btn ghost" onclick="copyCoupon('BEACH5')">Cupón</button></div>
+      </article>
+      <!-- 11 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?monitor" alt="Monitor portátil">
+        <div class="title">Monitor portátil 15.6\"</div>
+        <div class="price-row"><div><div class="price">US$89.99</div><div class="old">US$169.99</div></div><div class="badge">-47%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Monitor portátil 15.6')">Comprar</button><button class="btn ghost" onclick="copyCoupon('MON15')">Cupón</button></div>
+      </article>
+      <!-- 12 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?blender,kitchen" alt="Licuadora de vaso">
+        <div class="title">Licuadora de vaso 500W</div>
+        <div class="price-row"><div><div class="price">US$39.99</div><div class="old">US$79.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Licuadora de vaso 500W')">Comprar</button><button class="btn ghost" onclick="copyCoupon('BLEND15')">Cupón</button></div>
+      </article>
+      <!-- 13 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?sunglasses,mirrored" alt="Gafas moda">
+        <div class="title">Gafas fashion UV400</div>
+        <div class="price-row"><div><div class="price">US$14.99</div><div class="old">US$29.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Gafas fashion UV400')">Comprar</button><button class="btn ghost" onclick="copyCoupon('UV20')">Cupón</button></div>
+      </article>
+      <!-- 14 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?router,wifi" alt="Router portátil">
+        <div class="title">Router 4G portátil</div>
+        <div class="price-row"><div><div class="price">US$49.99</div><div class="old">US$99.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Router 4G portátil')">Comprar</button><button class="btn ghost" onclick="copyCoupon('NET10')">Cupón</button></div>
+      </article>
+      <!-- 15 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?humidifier" alt="Humidificador">
+        <div class="title">Humidificador ultrasónico</div>
+        <div class="price-row"><div><div class="price">US$24.99</div><div class="old">US$49.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Humidificador ultrasónico')">Comprar</button><button class="btn ghost" onclick="copyCoupon('HUMID10')">Cupón</button></div>
+      </article>
+      <!-- 16 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?watch,smart" alt="Reloj inteligente">
+        <div class="title">Reloj Inteligente S-Pro</div>
+        <div class="price-row"><div><div class="price">US$45.99</div><div class="old">US$89.99</div></div><div class="badge">-49%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Reloj Inteligente S-Pro')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SPRO10')">Cupón</button></div>
+      </article>
+      <!-- 17 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?printer" alt="Impresora portátil">
+        <div class="title">Impresora térmica mini</div>
+        <div class="price-row"><div><div class="price">US$29.99</div><div class="old">US$59.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Impresora térmica mini')">Comprar</button><button class="btn ghost" onclick="copyCoupon('PRINT5')">Cupón</button></div>
+      </article>
+      <!-- 18 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?bedding,blanket" alt="Juego de sábanas">
+        <div class="title">Juego de sábanas 200 hilos</div>
+        <div class="price-row"><div><div class="price">US$29.99</div><div class="old">US$59.99</div></div><div class="badge">-49%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Juego de sábanas')">Comprar</button><button class="btn ghost" onclick="copyCoupon('SHEET10')">Cupón</button></div>
+      </article>
+      <!-- 19 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?suitcase" alt="Maleta viaje">
+        <div class="title">Maleta cabina 20''</div>
+        <div class="price-row"><div><div class="price">US$54.99</div><div class="old">US$109.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Maleta cabina 20')">Comprar</button><button class="btn ghost" onclick="copyCoupon('TRAVEL10')">Cupón</button></div>
+      </article>
+      <!-- 20 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?gps,tracker" alt="Localizador GPS">
+        <div class="title">Localizador GPS mini</div>
+        <div class="price-row"><div><div class="price">US$19.99</div><div class="old">US$39.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Localizador GPS mini')">Comprar</button><button class="btn ghost" onclick="copyCoupon('GPS5')">Cupón</button></div>
+      </article>
+      <!-- 21 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?cuttingboard,kitchen" alt="Tabla de cortar">
+        <div class="title">Tabla de cortar antibacteriana</div>
+        <div class="price-row"><div><div class="price">US$9.49</div><div class="old">US$18.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Tabla de cortar')">Comprar</button><button class="btn ghost" onclick="copyCoupon('CUT5')">Cupón</button></div>
+      </article>
+      <!-- 22 -->
+      <article class="card" data-cat="fashion">
+        <img src="https://source.unsplash.com/800x600/?beanie,hat" alt="Gorro invierno">
+        <div class="title">Gorro de invierno térmico</div>
+        <div class="price-row"><div><div class="price">US$7.99</div><div class="old">US$15.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Gorro de invierno')">Comprar</button><button class="btn ghost" onclick="copyCoupon('WARM5')">Cupón</button></div>
+      </article>
+      <!-- 23 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?tripod,camera" alt="Trípode móvil">
+        <div class="title">Trípode para smartphone</div>
+        <div class="price-row"><div><div class="price">US$12.99</div><div class="old">US$24.99</div></div><div class="badge">-48%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Trípode para smartphone')">Comprar</button><button class="btn ghost" onclick="copyCoupon('TRIPOD5')">Cupón</button></div>
+      </article>
+      <!-- 24 -->
+      <article class="card" data-cat="home">
+        <img src="https://source.unsplash.com/800x600/?tiles,home" alt="Alfombra decorativa">
+        <div class="title">Alfombra decorativa 120x80cm</div>
+        <div class="price-row"><div><div class="price">US$29.99</div><div class="old">US$59.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Alfombra decorativa')">Comprar</button><button class="btn ghost" onclick="copyCoupon('RUG10')">Cupón</button></div>
+      </article>
+      <!-- 25 -->
+      <article class="card" data-cat="electronics">
+        <img src="https://source.unsplash.com/800x600/?microphone" alt="Micrófono condensador">
+        <div class="title">Micrófono condensador USB</div>
+        <div class="price-row"><div><div class="price">US$34.99</div><div class="old">US$69.99</div></div><div class="badge">-50%</div></div>
+        <div class="actions"><button class="btn primary" onclick="addToCart('Micrófono condensador USB')">Comprar</button><button class="btn ghost" onclick="copyCoupon('MIC10')">Cupón</button></div>
+      </article>
+    </section>
+
+    <footer>
+      © 2025 Tienda China — Todos los derechos reservados
+    </footer>
+  </div>
+
+  <script>
+    // Copiar cupón
+    function copyCoupon(code){
+      if(navigator.clipboard){
+        navigator.clipboard.writeText(code).then(()=>alert('Cupón copiado: '+code));
+      } else { prompt('Copia este cupón:',code); }
+    }
+    // Añadir al carrito (simulación)
+    function addToCart(name){ alert('Añadido al carrito: '+name); }
+
+    // Filtros sencillos
+    document.querySelectorAll('.chip').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        const cat = btn.getAttribute('data-cat');
+        document.querySelectorAll('.card').forEach(card=>{
+          card.style.display = (cat==='all' || card.getAttribute('data-cat')===cat)?'flex':'none';
+        });
+      });
+    });
+
+    // Buscar
+    document.getElementById('q').addEventListener('input',e=>{
+      const q = e.target.value.toLowerCase();
+      document.querySelectorAll('.card').forEach(card=>{
+        const t = card.querySelector('.title')?.textContent?.toLowerCase()||'';
+        card.style.display = t.includes(q)?'flex':'none';
+      });
+    });
+
+    // Copiar cupón hero
+    document.getElementById('applyCoupon').addEventListener('click',()=>copyCoupon('CHINA-RGB'))
+  </script>
 </body>
 </html>
